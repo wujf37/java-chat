@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chatsys.MainController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="590.0" prefWidth="182.0" spacing="40.0">
+         <children>
+            <ToggleButton mnemonicParsing="false" onAction="#chatAction" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: lightblue;" text="聊天">
+               <toggleGroup>
+                  <ToggleGroup fx:id="opt" />
+               </toggleGroup>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton mnemonicParsing="false" onAction="#friendAction" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: lightblue;" text="好友管理" toggleGroup="$opt">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton mnemonicParsing="false" onAction="#groupAction" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: lightblue;" text="群管理" toggleGroup="$opt">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </ToggleButton>
+         </children>
+         <padding>
+            <Insets top="30.0" />
+         </padding>
+      </VBox>
+      <Pane fx:id="contentPane" prefHeight="590.0" prefWidth="664.0" />
+   </children>
+</FlowPane>

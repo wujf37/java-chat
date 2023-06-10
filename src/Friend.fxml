@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="664.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chatsys.FriendController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="590.0" prefWidth="664.0" spacing="40.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <TextField fx:id="inputTextField" prefHeight="50.0" prefWidth="356.0" />
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#addFriendAction" prefHeight="39.0" prefWidth="130.0" text="添加好友">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <ListView fx:id="listFriendView" prefHeight="360.0" prefWidth="644.0" />
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#deleteFriendAction" prefHeight="39.0" prefWidth="130.0" text="删除好友">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="40.0" left="10.0" right="10.0" top="30.0" />
+         </padding>
+      </VBox>
+   </children>
+</FlowPane>

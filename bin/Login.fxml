@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chatsys.LoginController">
+   <children>
+      <Button fx:id="loginButton" defaultButton="true" layoutX="237.0" layoutY="250.0" mnemonicParsing="false" onAction="#doLogin" prefHeight="40.0" prefWidth="100.0" text="登录">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="cancelButton" cancelButton="true" layoutX="396.0" layoutY="250.0" mnemonicParsing="false" onAction="#doCancel" prefHeight="40.0" prefWidth="100.0" text="取消">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="104.0" layoutY="102.0" text="用户名：">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameTextField" layoutX="196.0" layoutY="95.0" prefHeight="40.0" prefWidth="300.0" />
+      <Label layoutX="104.0" layoutY="179.0" text="密   码：">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="237.0" layoutY="26.0" text="chat聊天室">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="76.0" layoutY="250.0" mnemonicParsing="false" onAction="#doReg" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: lightblue;" text="注册">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="passwordTextField" layoutX="196.0" layoutY="172.0" prefHeight="40.0" prefWidth="300.0" />
+   </children>
+</AnchorPane>
