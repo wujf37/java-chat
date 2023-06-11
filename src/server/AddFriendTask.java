@@ -38,7 +38,7 @@ public class AddFriendTask implements Runnable{
             ResultSet rs = stmt.executeQuery("SELECT * FROM friend where userid1 = " + userId1 + " AND userid2 ="+userId2);
             if(rs.next()) 
             {
-                out.writeUTF("已是好友关系");
+                out.writeUTF("本就是好友关系");
             }
             else {
             	PreparedStatement pstmt=con.prepareStatement("INSERT INTO friend (userid1,userid2) VALUES(?,?)");

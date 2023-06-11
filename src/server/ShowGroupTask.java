@@ -35,20 +35,22 @@ public class ShowGroupTask implements Runnable{
 		System.out.println("用户"+userId+"获取群聊列表");
         try
         {   
-            PreparedStatement pstmt=con.prepareStatement("SELECT * FROM user_group WHERE userid=?");
+            PreparedStatement pstmt=con.prepareStatement("SELECT * FROM usergroup WHERE userid=?");
         	pstmt.setString(1,userId);
         	ResultSet rs = pstmt.executeQuery();
         	List<String> idlist=new ArrayList<String>();
-            while(rs.next()) 
+            int count=0;
+        	while(rs.next()) 
             {   
-            	idlist.add(rs.getString("groupid"));//所有好友的外键保存为数组
+            	count++;
+            	idlist.add(rs.getString("groupid"));//所有群聊的外键保存为数组
             }
             String ids=String.join(",", idlist);
             rs.close();
             System.out.println(ids);
             if (idlist.size()>0) {
                 rs=pstmt.executeQuery("SELECT * FROM chatgroup WHERE groupid in("+ids+")");//用外键进行查找
-                String result="群聊列表:";
+                String result="群聊列表:"+count;
                 while(rs.next()) {
                 	result+="###"+rs.getString("groupid")+','+rs.getString("name");
                 }

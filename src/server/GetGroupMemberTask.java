@@ -7,20 +7,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.List;
 
-public class ShowFriendTask implements Runnable{
-	String userId;
+public class GetGroupMemberTask implements Runnable{
+	String groupId;
 	Socket server;
 	DataOutputStream out;
 	Hashtable<String,User> ht;
 	private Connection con=null;
-	public ShowFriendTask(String[] arg,Socket userver,Connection ucon,Hashtable<String,User> uht) {
-		userId=arg[0].trim();
+	public GetGroupMemberTask(String[] arg,Socket userver,Connection ucon,Hashtable<String,User> uht) {
+		groupId=arg[0].trim();
 		server=userver;
 		con=ucon;
 		try{
@@ -32,25 +30,26 @@ public class ShowFriendTask implements Runnable{
 		ht=uht;
 	}
 	public void run() {
-		System.out.println("用户"+userId+"获取好友列表");
+		System.out.println("获取群聊"+groupId+"成员列表");
         try
         {   
-            PreparedStatement pstmt=con.prepareStatement("SELECT * FROM friend WHERE userid1=?");
+            PreparedStatement pstmt=con.prepareStatement("SELECT * FROM usergroup WHERE groupid=?");
             
-        	pstmt.setString(1,userId);
+        	pstmt.setString(1,groupId);
         	ResultSet rs = pstmt.executeQuery();
         	List<String> idlist=new ArrayList<String>();
             int count=0;
         	while(rs.next()) 
-            {   count++;
-            	idlist.add(rs.getString("userid2"));//所有好友的外键保存为数组
+            {   
+            	count++;
+            	idlist.add(rs.getString("userid"));//所有好友的外键保存为数组
             }
             String ids=String.join(",", idlist);
             rs.close();
             System.out.println(ids);
             if (idlist.size()>0) {
                 rs=pstmt.executeQuery("SELECT * FROM user WHERE userid in("+ids+")");//用外键进行查找
-                String result="好友列表:"+count;
+                String result="成员列表:"+count;
                 while(rs.next()) {
                 	result+="###"+rs.getString("userid")+','+rs.getString("username");
                 }
@@ -58,7 +57,7 @@ public class ShowFriendTask implements Runnable{
                 rs.close();
             }
             else {
-            	out.writeUTF("暂无好友");
+            	out.writeUTF("暂无成员");//那么是谁在请求呢:)
             	rs.close();
             }
             server.close();
