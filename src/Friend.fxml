@@ -12,7 +12,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                <children>
-                  <TextField fx:id="inputTextField" prefHeight="50.0" prefWidth="356.0" />
+                  <TextField fx:id="inputTextField" prefHeight="50.0" prefWidth="356.0" promptText="请输入用户id" />
                   <Button defaultButton="true" mnemonicParsing="false" onAction="#addFriendAction" prefHeight="39.0" prefWidth="130.0" text="添加好友">
                      <font>
                         <Font size="20.0" />
@@ -20,7 +20,7 @@
                   </Button>
                </children>
             </HBox>
-            <ListView fx:id="listFriendView" prefHeight="360.0" prefWidth="644.0" />
+            <ListView fx:id="friendListView" prefHeight="360.0" prefWidth="644.0" />
             <Button defaultButton="true" mnemonicParsing="false" onAction="#deleteFriendAction" prefHeight="39.0" prefWidth="130.0" text="删除好友">
                <font>
                   <Font size="20.0" />

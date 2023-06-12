@@ -3,7 +3,6 @@ package chatsys;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.InetAddress;
 import java.net.Socket;
 
 import javafx.application.Application;
@@ -38,7 +37,6 @@ public class Main extends Application {
 		catch(Exception e) {
 			System.out.println(e);
 		}
-
 	}
 	
 	public static void main(String[] args) {

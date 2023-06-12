@@ -12,10 +12,10 @@
          <children>
             <HBox alignment="CENTER" prefHeight="80.0" prefWidth="454.0" spacing="10.0">
                <children>
-                  <TextField fx:id="inputTextField" alignment="CENTER" prefHeight="39.0" prefWidth="452.0" promptText="好友名称" />
+                  <TextField fx:id="inputTextField" alignment="CENTER" prefHeight="39.0" prefWidth="452.0" promptText="好友id" />
                </children>
             </HBox>
-            <ListView fx:id="listView" prefHeight="413.0" prefWidth="454.0" />
+            <ListView fx:id="groupListView" prefHeight="413.0" prefWidth="454.0" />
             <Button defaultButton="true" mnemonicParsing="false" onAction="#exitGroupAction" prefHeight="39.0" prefWidth="111.0" text="退出群聊">
                <font>
                   <Font size="20.0" />

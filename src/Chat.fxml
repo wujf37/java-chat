@@ -10,27 +10,23 @@
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="590.0" prefWidth="182.0" spacing="40.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-               <children>
-                  <ToggleButton mnemonicParsing="false" onAction="#toGroupAction" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: lightblue;" text="群">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="opt" />
-                     </toggleGroup>
-                  </ToggleButton>
-                  <ToggleButton mnemonicParsing="false" onAction="#toFriendAction" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: lightblue;" text="好友" toggleGroup="$opt">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </ToggleButton>
-               </children>
-            </HBox>
-            <ListView fx:id="listView" prefHeight="610.0" prefWidth="182.0" />
+            <TabPane fx:id="tabPane" prefHeight="550.0" prefWidth="167.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="      群      ">
+                     <content>
+                        <ListView fx:id="groupListView" prefHeight="610.0" prefWidth="182.0" />
+                     </content>
+                  </Tab>
+                <Tab text="     好友     ">
+                	<content>
+                        <ListView fx:id="friendListView" prefHeight="610.0" prefWidth="182.0" />
+                     </content>
+                </Tab>
+              </tabs>
+            </TabPane>
          </children>
          <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
+            <Insets bottom="10.0" left="10.0" right="10.0" top="13.0" />
          </padding>
       </VBox>
       <VBox prefHeight="590.0" prefWidth="482.0">
